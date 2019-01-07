@@ -1,0 +1,87 @@
+<div class="screen" #screen>
+  <div class="header">
+    <ul class="nav-list" (click)='activate()'>
+      <li class="nav1">
+        <div class="toggleAnimation">
+          <a #open>
+            <span class="top">
+              <span></span>
+            </span>
+            <span class="bottom">
+              <span></span>
+            </span>
+          </a>
+        </div>
+      </li>
+      <li class="nav2">
+        <div class="title-icon">
+          <span style="font-size: 23px;">
+            <i class="fab fa-apple" style="color:white"></i>
+            <span style="color:white"><small>{{title}}</small></span>
+          </span>
+        </div>
+      </li>
+      <li class="nav3">
+        <div class="search">
+          <span style="font-size: 18px;">
+            <i class="fas fa-search" style="color:white"></i>
+            <i class="fas fa-bell" style="color:white"></i>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="content" *ngIf ='isOpen'>
+    <ul class="menu list-group list-group-flush">
+        <li class="menu-item" style=" border-left: 5px solid #4fc6ee;">
+          <a href="#" >Talent</a>
+        </li>
+        <li class="menu-item menu-dropdown" style=" border-left: 5px solid #ec357a;" (click)='openConn()'>
+          <a href="#" >Connections</a>
+          <span class="togglePanel" >
+            <span class="toggleBars"#connBars>
+              <span class="bar-1"></span>
+              <span class="bar-2"></span>
+            </span>
+          </span>
+        </li>
+        <li class="dropdown-menu" *ngIf='isConnOpen'>
+          <div class="dropdown-item" style="background-color: black"href="#">Pipelines</div>
+          <div class="dropdown-item" style="background-color: black"href="#">Requisition</div>
+          <div class="dropdown-item" style="background-color: black"href="#">Projects</div>
+        </li>
+        <li class="menu-item menu-dropdown topBorder" style=" border-left: 5px solid #f96c09;"(click)='openIntell()'>
+          <a href="#" >Intelligence</a>
+          <span class="togglePanel" >
+              <span class="toggleBars" #intellBars>
+                <span class="bar-1"></span>
+                <span class="bar-2"></span>
+              </span>
+          </span>
+        </li>
+        <li class="dropdown-menu" *ngIf='isIntellOpen'>
+          <div class="dropdown-item" style="background-color: black"href="#">Companies</div>
+          <div class="dropdown-item" style="background-color: black"href="#">Schools</div>
+        </li>
+        <li class="menu-item menu-dropdown topBorder" style=" border-left: 5px solid #8600e5;" (click)='openWork()'>
+          <a href="#">Workspace</a>
+          <span class="togglePanel" >
+            <span class="toggleBars" #workBars>
+              <span class="bar-1"></span>
+              <span class="bar-2"></span>
+            </span>
+          </span>
+        </li>
+        <li class="menu-item" style=" border-left: 5px solid #7ac049;">
+          <a href="#" >Insights</a>
+        </li>
+        <li class="menu-item" style=" border-left: 5px solid #676767;">
+          <a href="#" style="opacity: 0.3;">Johhny Applesseed</a>
+          <i class="fas fa-angle-down" style="color: white;opacity: 0.6;padding-left:4px"></i>
+        </li>
+    </ul>
+
+  </div>
+</div>
+
+
